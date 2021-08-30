@@ -3,9 +3,9 @@ class CharactersController < ApplicationController
 
   # GET /characters
   def index
-    @characters = Character.all
+    characters = Character.all
 
-    render json: @characters
+    render json: characters.to_json
   end
 
   # GET /characters/1

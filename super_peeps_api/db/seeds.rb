@@ -10,6 +10,9 @@
 #
 # Index_a = BASE_URL + '/search/a'
 
-# response = RestClient.get('https://superheroapi.com/api.php/10225229547146375/search/a')
-# charsArray = JSON.parse(response)
-# binding.pry
+response = RestClient.get('https://superheroapi.com/api.php/10225229547146375/search/a')
+charsArray = JSON.parse(response)
+charsArray['results'].each do |c|
+  Character.create(name: c['name'], alignment: c['biography']['alignment'], publisher: c['biography']['publisher'], image: c['image']['url'])
+  binding.pry
+end

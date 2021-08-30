@@ -13,7 +13,10 @@
 ActiveRecord::Schema.define(version: 2021_08_28_195211) do
 
   create_table "characters", force: :cascade do |t|
-    t.string "chars"
+    t.string "name"
+    t.string "alignment"
+    t.string "publisher"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
