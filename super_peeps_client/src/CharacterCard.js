@@ -3,21 +3,8 @@ import './App.css'
 
 class CharacterCard extends React.Component {
 
-  state = {
-    characters: []
-  }
-
-  componentDidMount(){
-    fetch('http://localhost:3000/characters')
-    .then(resp => resp.json())
-    .then(chars => {
-      this.setState({ characters: chars })
-    })
-  }
-
   render(){
-    let charArray = this.state.characters.map(c => {
-      console.log(c)
+    let charArray = this.props.chr.map(c => {
       return(
         <div className='char-card' key={c.name}>
           <div>
