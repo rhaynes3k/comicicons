@@ -13,10 +13,22 @@
 ActiveRecord::Schema.define(version: 2021_08_28_195211) do
 
   create_table "characters", force: :cascade do |t|
+    t.string "siteid"
     t.string "name"
     t.string "alignment"
     t.string "publisher"
     t.string "image"
+    t.string "intelligence"
+    t.string "strength"
+    t.string "speed"
+    t.string "durability"
+    t.string "power"
+    t.string "combat"
+    t.string "full_name"
+    t.string "first_appearance"
+    t.string "occupation"
+    t.string "affiliations"
+    t.string "relatives"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

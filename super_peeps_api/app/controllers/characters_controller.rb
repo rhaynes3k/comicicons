@@ -8,6 +8,11 @@ class CharactersController < ApplicationController
     render json: characters.to_json
   end
 
+  def chars
+    villians = Character.villians
+    heros = Character.heros
+    render json: {heros: heros, villians: villians}
+  end
   # GET /characters/1
   def show
     render json: @character

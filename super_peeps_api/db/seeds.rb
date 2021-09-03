@@ -13,6 +13,6 @@
 response = RestClient.get('https://superheroapi.com/api.php/10225229547146375/search/a')
 charsArray = JSON.parse(response)
 charsArray['results'].each do |c|
-  Character.create(name: c['name'], alignment: c['biography']['alignment'], publisher: c['biography']['publisher'], image: c['image']['url'])
+  Character.create(siteid: c['id'], name: c['name'], alignment: c['biography']['alignment'], publisher: c['biography']['publisher'], image: c['image']['url'], intelligence: c['powerstats']['intelligence'], strength: c['powerstats']['strength'], speed: c['powerstats']['speed'], durability: c['powerstats']['durability'], power: c['powerstats']['power'], combat: c['powerstats']['combat'], full_name: c['biography']['full-name'], first_appearance: c['biography']['first-appearance'], occupation: c['work']['occupation'], affiliations: c['connections']['group-affiliation'], relatives: c['connections']['relatives'])
   binding.pry
 end

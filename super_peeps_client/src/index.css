@@ -13,18 +13,21 @@ code {
 }
 
 .char-cont {
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   border: 5px solid red;
   color: red;
-  padding-bottom: 100px;
+  padding-bottom: 90px;
+
 
 }
 .char-card {
   border: 3px solid black;
   color: black;
-  width: 80%;
-  height: 80%;
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+
 }
 .image-cont {
   border: 2px dotted green;
@@ -39,7 +42,11 @@ code {
 }
 
 img {
-  width: 40%;
-  height: 50%;
-  margin-left: 300px;
+  width: 30%;
+  height: 40%;
+  margin-left: 60%;
+}
+
+.c-card {
+  border: 8px solid orange;
 }
