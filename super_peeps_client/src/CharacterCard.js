@@ -6,7 +6,15 @@ class CharacterCard extends React.Component {
     let c = this.props.chars
       return(
         <div key={c.id}>
-          <img src={c.image} alt='k' />
+          <div>
+            <img src={c.image} alt='k' />
+          </div>
+          <div>
+          <p> {this.props.name} </p>
+          <p> {c.name} </p>
+          <h3> {c.publisher} </h3>
+          <h3> {c.first_appearance} </h3>
+          </div>
         </div>
       )
   }

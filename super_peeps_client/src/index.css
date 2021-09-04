@@ -22,7 +22,7 @@ code {
 
 }
 .char-card {
-  border: 3px solid black;
+  border: 3px dotted black;
   color: black;
   width: 50%;
   height: 50%;
@@ -42,11 +42,11 @@ code {
 }
 
 img {
-  width: 30%;
-  height: 40%;
-  margin-left: 60%;
+  width: 50%;
+  height: 60%;
+  margin-left: auto%;
 }
 
 .c-card {
-  border: 8px solid orange;
+
 }

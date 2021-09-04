@@ -1,20 +1,18 @@
 
-  function characterReducer = (state = [{
-    characters: []
-    }], action) {
+  function characterReducer (state = [{heros: [{id: 1}]}], action){
     switch(action.type) {
-      case 'MODIFY_CHARACTERS':
+      case "SET_CHARACTERS":
         return action.payload
-      case 'ADD_LIKE':
-        return //state
-      case 'REMOVE_LIKE':
-        return //state
-      case 'SEARCH_FORM':
-        return //state
-
-
+    //   case 'REMOVE_LIKE':
+    //     return action.payload
+    //   case 'SEARCH_FORM':
+    //     return action.payload
+    //
+    //
       default:
         return state
   }
 
 }
+
+export default characterReducer

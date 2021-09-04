@@ -5,6 +5,7 @@ class CreateCharacters < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :alignment
       t.string :publisher
+      t.string :gender
       t.string :image
       t.string :intelligence
       t.string :strength

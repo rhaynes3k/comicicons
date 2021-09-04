@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2021_08_28_195211) do
     t.string "name"
     t.string "alignment"
     t.string "publisher"
+    t.string "gender"
     t.string "image"
     t.string "intelligence"
     t.string "strength"

@@ -6,25 +6,28 @@ import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom"
+import { connect } from 'react-redux'
+import { setCharacters } from './actions/characterActions'
 
 class App extends React.Component {
 
 
-    state = {
-      characters: [],
-      likes: []
-    }
+    // state = {
+    //   characters: [],
+    //   likes: []
+    // }
 
-    componentDidMount(){
+    componentDidMount = () => {
+      console.log(this)
       fetch('http://localhost:3000/chars')
       .then(resp => resp.json())
       .then(chars => {
-        this.setState({ characters: chars })
+        this.props.dispatchSetCharacters(chars)
       })
     }
 
     render(){
-      console.log('THIS IS STATE - APP', this.state.characters)
+      console.log('THIS IS STATE - APP', this.props.characters)
       return (
         <Router>
           <Link to='/home'>
@@ -47,7 +50,7 @@ class App extends React.Component {
 
 
           <div>
-            <CharacterContainer name='CharacterContainer' chars={this.state.characters} />
+            <CharacterContainer name='Character Component' chars={this.props.characters} />
           </div>
 
         </Router>
@@ -55,4 +58,16 @@ class App extends React.Component {
     }
 }
 
-export default App
+const mapStateToProps = (state) => {
+  return {
+    characters: state
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatchSetCharacters: (characters) => dispatch(setCharacters(characters))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
