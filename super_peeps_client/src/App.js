@@ -1,13 +1,12 @@
 // import logo from './logo.svg';
 import React from 'react'
-import './App.css';
-import CharacterContainer from './CharacterContainer'
+import CharacterContainer from './components/CharacterContainer'
 import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom"
 import { connect } from 'react-redux'
-import { setCharacters } from './actions/characterActions'
+import { fetchCharacters } from './actions/characterActions'
 
 class App extends React.Component {
 
@@ -18,16 +17,11 @@ class App extends React.Component {
     // }
 
     componentDidMount = () => {
-      console.log(this)
-      fetch('http://localhost:3000/chars')
-      .then(resp => resp.json())
-      .then(chars => {
-        this.props.dispatchSetCharacters(chars)
-      })
+      this.props.dispatchFetchCharacters()
     }
 
     render(){
-      console.log('THIS IS STATE - APP', this.props.characters)
+      console.log(this.props.characters)
       return (
         <Router>
           <Link to='/home'>
@@ -50,7 +44,7 @@ class App extends React.Component {
 
 
           <div>
-            <CharacterContainer name='Character Component' chars={this.props.characters} />
+            <CharacterContainer name='Character Component'  chars={this.props.characters} />
           </div>
 
         </Router>
@@ -58,7 +52,7 @@ class App extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => {console.log(state)
   return {
     characters: state
   }
@@ -66,7 +60,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    dispatchSetCharacters: (characters) => dispatch(setCharacters(characters))
+    dispatchFetchCharacters: () => dispatch(fetchCharacters())
   }
 }
 

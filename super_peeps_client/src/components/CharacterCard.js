@@ -1,19 +1,18 @@
 import React from 'react'
-import './App.css'
+
 
 class CharacterCard extends React.Component {
   render(){
     let c = this.props.chars
       return(
-        <div key={c.id}>
-          <div>
+        <div className='char-card' key={c.id}>
+          <div className='img-cont'>
             <img src={c.image} alt='k' />
           </div>
           <div>
-          <p> {this.props.name} </p>
-          <p> {c.name} </p>
-          <h3> {c.publisher} </h3>
-          <h3> {c.first_appearance} </h3>
+          <h3> Name: {c.name} </h3>
+          <p> Publisher: {c.publisher} </p>
+          <p> First Appearance: {c.first_appearance} </p>
           </div>
         </div>
       )
