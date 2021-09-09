@@ -1,20 +1,20 @@
 import React from 'react'
+import {
+  Link
+} from "react-router-dom"
 
 
 class CharacterCard extends React.Component {
   render(){
     let c = this.props.chars
       return(
-        <div className='char-card' key={c.id}>
-          <div className='img-cont'>
-            <img src={c.image} alt='k' />
+
+        <Link to={`/chars/${c.id}`}>
+          <div className='char-card'>
+            <img src={c.image} alt='No Image Found' key={c.id} />
+              <h6> {c.name} </h6>
           </div>
-          <div>
-          <h3> Name: {c.name} </h3>
-          <p> Publisher: {c.publisher} </p>
-          <p> First Appearance: {c.first_appearance} </p>
-          </div>
-        </div>
+        </Link>
       )
   }
 }

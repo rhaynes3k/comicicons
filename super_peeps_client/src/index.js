@@ -7,12 +7,11 @@ import { Provider } from 'react-redux'
 import store from './store'
 
 // const store = createStore(characterReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
-    </Provider>  
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

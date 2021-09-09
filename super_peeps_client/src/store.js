@@ -11,6 +11,7 @@ const store = createStore(
   composedEnhancer
 )
 
+window.store = store
 
 
 

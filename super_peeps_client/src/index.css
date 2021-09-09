@@ -12,24 +12,42 @@ code {
     monospace;
 }
 
-.char-cont {
-  border: 5px solid red;
-  color: red;
-  max-width: 80%;
-  margin: 0 auto;
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.char-card {
-  border: 5px dotted black;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+}
+
+.container > div {
+  height: 210px;
+  margin: 0;
+  padding: 0;
+}
+.bg1 {
+background-image: image('/Images/superhero-comicbook-background.jpg');
+}
+
+.char-details {
+  border: 5px solid black;
   color: black;
   text-align: center;
   margin: 0 auto;
-  max-height: 100%
-
+  max-height: 30%;
+  max-width:  60%;
 }
+
+.char-card {
+  text-align: center;
+}
+
 .image-cont {
   border: 2px dotted green;
-  color: green;
   max-width: 60%;
   max-height: 60%;
 }
@@ -41,8 +59,8 @@ code {
 }
 
 img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 
 .c-card {

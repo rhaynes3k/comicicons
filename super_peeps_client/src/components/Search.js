@@ -8,27 +8,26 @@ class Search extends React.Component {
     text: ''
   }
 
-handleChange = (event) => {
-  
-  this.props.searchChars(event.target.value)
-  this.setState({
-    [event.target.name]: event.target.value
-  })
+  handleChange = (event) => {
+    console.log('ETV', event.target.value, 'SEARCH_STATE', this.state)
+    this.props.searchChars(event.target.value)
+    // this.filteredList(this.state.text)
+    this.setState({
+      text: event.target.value
+    })
 
-}
+  }
 
-handleSubmit = (event) => {
-  // event.preventDefault()
-}
+  // filteredList = () => {
+  //  this.props.hero.filter( (c) => c.name.includes(this.state.text))
+  // }
+
   render(){
-    // console.log(event.target.value)
-    console.log('REDUX STATE', this.props)
-    console.log(this.state.text)
     return(
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <input type='text' value={this.state.text} name='text' onChange={this.handleChange}/>
-          <input type='submit' value='search' />
+          <input type='submit' value='Reset' />
         </form>
       </div>
     )
@@ -36,17 +35,19 @@ handleSubmit = (event) => {
 
 }
 
-const mapStateToProps = (state) => {console.log('MSTP CONNECT STATE', state)
+const mapStateToProps = (state) => {
   return{
-    text: state
+    heros: state.heros,
+    villians: state.villians
   }
 }
 
+
 /* const mapDispatchToProps = (dispatch) => {
     return {
-      dispatchACTION: () => dispatch(ACTION)
+      dispatchSearchChars: () => dispatch(ACTION)
   }
 }
   IS THE SAME AS { searchChars } IN THE EXPORT BELOW */
 
-export default connect(mapStateToProps, { searchChars })(Search)
+  export default connect(mapStateToProps, { searchChars })(Search)

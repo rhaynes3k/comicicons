@@ -12,9 +12,10 @@ export const fetchCharacters = () => {
   //   type: "SET_CHARACTERS",
   //   payload: characters
   // }
-export const searchChars = (text) => dispatch => {console.log(text)
+export const searchChars = (text) => dispatch => {
   dispatch ({
     type: 'SEARCH_CHARS',
     payload: text
   })
+  console.log('ACTION_TEXT', text)
 }

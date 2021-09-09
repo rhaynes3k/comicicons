@@ -21,7 +21,6 @@ class App extends React.Component {
     }
 
     render(){
-      console.log(this.props.characters)
       return (
         <Router>
           <Link to='/home'>
@@ -42,9 +41,8 @@ class App extends React.Component {
             </div>
           </Link>
 
-
           <div>
-            <CharacterContainer name='Character Component'  chars={this.props.characters} />
+            <CharacterContainer name='Character Component'  key='index' chars={this.props.characters} />
           </div>
 
         </Router>
@@ -52,7 +50,7 @@ class App extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {console.log(state)
+const mapStateToProps = (state) => {
   return {
     characters: state
   }
