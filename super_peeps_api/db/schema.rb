@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_08_28_195211) do
     t.string "occupation"
     t.string "affiliations"
     t.string "relatives"
+    t.string "likes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

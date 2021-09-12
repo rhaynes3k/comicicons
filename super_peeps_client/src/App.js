@@ -42,7 +42,7 @@ class App extends React.Component {
           </Link>
 
           <div>
-            <CharacterContainer name='Character Component'  key='index' chars={this.props.characters} />
+            <CharacterContainer name='Character Component'  key='5' chars={this.props.characters} />
           </div>
 
         </Router>

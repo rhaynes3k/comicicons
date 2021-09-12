@@ -41,3 +41,23 @@ filteredList = () => {
  charsArray['results'].each do |c|
    Character.create(siteid: c['id'], name: c['name'], alignment: c['biography']['alignment'], publisher: c['biography']['publisher'], gender: c['appearance']['gender'], image: c['image']['url'], intelligence: c['powerstats']['intelligence'], strength: c['powerstats']['strength'], speed: c['powerstats']['speed'], durability: c['powerstats']['durability'], power: c['powerstats']['power'], combat: c['powerstats']['combat'], full_name: c['biography']['full-name'], first_appearance: c['biography']['first-appearance'], occupation: c['work']['occupation'], affiliations: c['connections']['group-affiliation'], relatives: c['connections']['relatives'])
  end
+
+
+
+ fetch(`${this.endpoint}/colors`,
+       {
+         method: 'POST',
+         headers: {
+           'Content-Type': 'application/json',
+         Accept: 'application/json'
+           },
+         body: JSON.stringify(colorPic)
+       })
+         .then(response => response.json())
+         .then(result => {
+           colorService.getColor()
+         })
+         .catch((error) => {
+         console.log('Error:', error);
+         })
+   }

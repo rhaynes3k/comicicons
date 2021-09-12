@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-
+import LikeButton from './LikeButton'
 
 const CharDetails = (props) => {
 
@@ -10,18 +10,19 @@ const CharDetails = (props) => {
     for(let h of props.dets.heros) {
       newArr.push(h)
     }
-    console.log('HEROS', props.dets.heros)
+
     for(let v of props.dets.villians) {
       newArr.push(v)
     }
-console.log('VILLIANS', props.dets.villians)
+
     chr = newArr.filter(c => c.id == id)
-    console.log('CHR', chr, 'NEW_ARRAY', newArr)
+    console.log('CHRID', chr[0].id)
     return(
+      <div>
       <div className='char-details'>
         <h2> Character Details </h2>
         <h3> {chr[0].name} </h3>
-        <img src={chr[0].image} alt="No Image Found" />
+        <img src={chr[0].image} alt="No File Found" />
         <h3> Combat: {chr[0].combat} </h3>
         <h3> Intelligence: {chr[0].intelligence} </h3>
         <h3> Power: {chr[0].power} </h3>
@@ -30,15 +31,11 @@ console.log('VILLIANS', props.dets.villians)
         <h3> Affiliations:{chr[0].affiliations} </h3>
         <h3> First Appearance: {chr[0].first_appearance} </h3>
       </div>
-
-
+        <div>
+          <LikeButton text='Like' chrId={chr[0].id}/>
+        </div>
+      </div>
     )
-  // const {data: chr} = props.map(c => c.id === id)
-  // const dets = {props}
-  // debugger
-  // let det = {props.dets}.map(c => c.id === id)
-  // console.log('DET', chr)
-
 
 
 }

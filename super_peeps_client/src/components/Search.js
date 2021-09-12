@@ -9,14 +9,13 @@ class Search extends React.Component {
   }
 
   handleChange = (event) => {
-    console.log('ETV', event.target.value, 'SEARCH_STATE', this.state)
     this.props.searchChars(event.target.value)
     // this.filteredList(this.state.text)
     this.setState({
       text: event.target.value
     })
-
   }
+
 
   // filteredList = () => {
   //  this.props.hero.filter( (c) => c.name.includes(this.state.text))

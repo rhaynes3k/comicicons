@@ -6,11 +6,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom"
-import { useParams } from 'react-router-dom'
 
 class CharacterContainer extends React.Component {
-
-
 
   render(){
       return (
@@ -32,6 +29,7 @@ class CharacterContainer extends React.Component {
                 {<CharDetails dets={this.props.chars} />}
               </div>
             </Route>
+
             <Route path='/heroes'>
               <div className='char-form'>
                 <Search hero={this.props.chars.heros} />
@@ -50,13 +48,9 @@ class CharacterContainer extends React.Component {
               </div>
             </Route>
 
-
-
-
           </Switch>
         </div>
       )
-      debugger
   }
 }
 

@@ -18,6 +18,7 @@ class CreateCharacters < ActiveRecord::Migration[6.0]
       t.string :occupation
       t.string :affiliations
       t.string :relatives
+      t.string :likes
       t.timestamps
     end
   end

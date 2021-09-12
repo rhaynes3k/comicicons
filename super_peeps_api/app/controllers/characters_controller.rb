@@ -15,7 +15,7 @@ class CharactersController < ApplicationController
   end
   # GET /characters/1
   def show
-    render json: @character
+    render json: character
   end
 
   # POST /characters
@@ -31,10 +31,10 @@ class CharactersController < ApplicationController
 
   # PATCH/PUT /characters/1
   def update
-    if @character.update(character_params)
-      render json: @character
+    if character.update(character_params)
+      render json: character
     else
-      render json: @character.errors, status: :unprocessable_entity
+      render json: character.errors, status: :unprocessable_entity
     end
   end
 
